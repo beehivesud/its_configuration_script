@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Se vuoi farlo funzionare con qualsiasi utente, usa USER_HOME="$HOME"
-USER_HOME="/home/fabio"
+USER_HOME="${$HOME}"
 
 echo "=== Installazione non-interattiva di Homebrew ==="
 # CI=1 disabilita prompt interattivi, HOMEBREW_NO_ANALYTICS disabilita analytics
@@ -14,8 +14,8 @@ echo '. <(asdf completion bash)' >> "${USER_HOME}/.bashrc"
 
 
 echo "=== Installazione build-essential (non-interattiva) ==="
-sudo DEBIAN_FRONTEND=noninteractive apt-get update --fix-missing
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential
+sudo DEBIAN_FRONTEND=noninteractive apt update --fix-missing
+sudo DEBIAN_FRONTEND=noninteractive apt install -y build-essential
 
 echo "=== Installazione di GCC via Homebrew ==="
 brew install gcc

@@ -53,9 +53,9 @@ echo "=== Ricarica della shell ==="
 source ${USER_HOME}/.bashrc
 
 echo "=== Controllo pnpm e fallback automatico ==="
-if ! pnpm --version &>/dev/null; then
+if ! asdf exec pnpm --version &>/dev/null; then
   echo "pnpm non trovato, eseguo 'asdf exec pnpm setup'"
-  pnpm setup
+    asdf exec pnpm setup
 fi
 
 echo "=== Ricarica della shell ==="

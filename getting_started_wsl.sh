@@ -16,7 +16,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt update --fix-missing
 sudo DEBIAN_FRONTEND=noninteractive apt install -y build-essential
 
 echo "=== Ricarica della shell ==="
-source "${USER_HOME}/.bashrc"
+source ${USER_HOME}/.bashrc
 
 echo "=== Installazione di GCC via Homebrew ==="
 brew install gcc
@@ -29,7 +29,7 @@ echo 'export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"' >> "${USER_HOME}/
 echo '. <(asdf completion bash)' >> "${USER_HOME}/.bashrc"
 
 echo "=== Ricarica della shell ==="
-source "${USER_HOME}/.bashrc"
+source ${USER_HOME}/.bashrc
 
 echo "=== Aggiunta del plugin Node.js ad asdf ==="
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
@@ -50,7 +50,7 @@ asdf reshim nodejs
 asdf exec corepack use pnpm@latest-10
 
 echo "=== Ricarica della shell ==="
-source "${USER_HOME}/.bashrc"
+source ${USER_HOME}/.bashrc
 
 echo "=== Controllo pnpm e fallback automatico ==="
 if ! pnpm --version &>/dev/null; then
@@ -59,7 +59,7 @@ if ! pnpm --version &>/dev/null; then
 fi
 
 echo "=== Ricarica della shell ==="
-source "${USER_HOME}/.bashrc"
+source ${USER_HOME}/.bashrc
 
 echo "=== Installazione typescript ==="
 pnpm i -g typescript

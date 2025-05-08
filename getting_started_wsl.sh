@@ -52,4 +52,7 @@ fi
 echo "=== Ricarica della shell ==="
 source "${USER_HOME}/.bashrc"
 
+echo "=== Installazione typescript ==="
+pnpm i -g typescript
+
 echo "=== FINE ==="

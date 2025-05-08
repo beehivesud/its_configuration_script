@@ -15,6 +15,9 @@ echo "=== Installazione build-essential (non-interattiva) ==="
 sudo DEBIAN_FRONTEND=noninteractive apt update --fix-missing
 sudo DEBIAN_FRONTEND=noninteractive apt install -y build-essential
 
+echo "=== Ricarica della shell ==="
+source "${USER_HOME}/.bashrc"
+
 echo "=== Installazione di GCC via Homebrew ==="
 brew install gcc
 

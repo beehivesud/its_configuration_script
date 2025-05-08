@@ -6,7 +6,7 @@ USER_HOME=$HOME
 
 echo "=== Installazione non-interattiva di Homebrew ==="
 # CI=1 disabilita prompt interattivi, HOMEBREW_NO_ANALYTICS disabilita analytics
-CI=1 HOMEBREW_NO_ANALYTICS=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+HOMEBREW_NO_ANALYTICS=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "=== Configurazione di Homebrew in .bashrc ==="
 echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> "${USER_HOME}/.bashrc"

@@ -15,6 +15,7 @@ echo "=== Installazione build-essential (non-interattiva) ==="
 sudo DEBIAN_FRONTEND=noninteractive apt update --fix-missing
 sudo DEBIAN_FRONTEND=noninteractive apt install -y build-essential
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 echo "=== Ricarica della shell ==="
 source ${USER_HOME}/.bashrc
 

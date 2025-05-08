@@ -8,6 +8,9 @@ echo "=== Installazione non-interattiva di Homebrew ==="
 # CI=1 disabilita prompt interattivi, HOMEBREW_NO_ANALYTICS disabilita analytics
 CI=1 HOMEBREW_NO_ANALYTICS=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+echo "=== Configurazione di Homebrew in .bashrc ==="
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> "${USER_HOME}/.bashrc"
+
 echo "=== Installazione build-essential (non-interattiva) ==="
 sudo DEBIAN_FRONTEND=noninteractive apt update --fix-missing
 sudo DEBIAN_FRONTEND=noninteractive apt install -y build-essential

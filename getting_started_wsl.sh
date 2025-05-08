@@ -2,16 +2,11 @@
 set -euo pipefail
 
 # Se vuoi farlo funzionare con qualsiasi utente, usa USER_HOME="$HOME"
-USER_HOME="${$HOME}"
+USER_HOME=$HOME
 
 echo "=== Installazione non-interattiva di Homebrew ==="
 # CI=1 disabilita prompt interattivi, HOMEBREW_NO_ANALYTICS disabilita analytics
 CI=1 HOMEBREW_NO_ANALYTICS=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-echo "=== Configurazione di Homebrew in .bashrc ==="
-echo 'export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"' >> "${USER_HOME}/.bashrc"
-echo '. <(asdf completion bash)' >> "${USER_HOME}/.bashrc"
-
 
 echo "=== Installazione build-essential (non-interattiva) ==="
 sudo DEBIAN_FRONTEND=noninteractive apt update --fix-missing
@@ -22,6 +17,10 @@ brew install gcc
 
 echo "=== Installazione di asdf ==="
 brew install asdf
+
+echo "=== Configurazione di asdf in .bashrc ==="
+echo 'export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"' >> "${USER_HOME}/.bashrc"
+echo '. <(asdf completion bash)' >> "${USER_HOME}/.bashrc"
 
 echo "=== Aggiunta del plugin Node.js ad asdf ==="
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git

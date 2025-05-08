@@ -28,6 +28,9 @@ echo "=== Configurazione di asdf in .bashrc ==="
 echo 'export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"' >> "${USER_HOME}/.bashrc"
 echo '. <(asdf completion bash)' >> "${USER_HOME}/.bashrc"
 
+echo "=== Ricarica della shell ==="
+source "${USER_HOME}/.bashrc"
+
 echo "=== Aggiunta del plugin Node.js ad asdf ==="
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 
